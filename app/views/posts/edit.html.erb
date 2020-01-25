@@ -22,11 +22,11 @@
   </div>
   <%= submit_tag "Update" %>
   
-  <% if @author.errors.any? %>
+  <% if @post.errors.any? %>
     <div id="error_explanation">
       <h3>Errors:</h3>
       <ul>
-        <% @author.errors.full_messages.each do |message| %>
+        <% @post.errors.full_messages.each do |message| %>
         <li><%= message %></li>
         <% end %>
       </ul>
