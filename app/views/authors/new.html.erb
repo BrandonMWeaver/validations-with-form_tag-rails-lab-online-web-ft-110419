@@ -18,11 +18,15 @@
     <%= text_field_tag "email" %>
   </div>
   
-  <div class="field">
+  <% if @author.errors[:phone_number].empty? %>
+    <div class="field">
+  <% else %>
+    <div class="field_with_errors">
+  <% end %>
     <%= label_tag "phone_number", "Phone Number" %>
     <%= text_field_tag "phone_number" %>
   </div>
-
+  
   <%= submit_tag "Create" %>
   
   <% if @author.errors.any? %>
@@ -35,4 +39,5 @@
       </ul>
     </div>
   <% end %>
+  
 <% end %>
