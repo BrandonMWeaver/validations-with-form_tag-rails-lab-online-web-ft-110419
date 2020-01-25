@@ -16,4 +16,14 @@
   </div>
 
   <%= submit_tag "Create" %>
+  
+  <% if @author.errors.any? %>
+    <div id="error_explanation">
+      <h3>Errors:</h3>
+      <ul>
+        <% @author.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      </ul>
+    </div>
+  <% end %>
 <% end %>
